@@ -28,19 +28,23 @@ public class piramede {
 	}
 	
 
-    public static int Calculalado(int lado, int altura) {
+    public static float Calculalado(int lado, int altura) {
     	
-       int total = ((lado * altura) / 2) * 4;
+       float total = (((lado * altura) / 2) * 4);
     	
        return total;
     	
     }
     
-    public static int alturaimento(int lado, int altura) {
+    public static float latas(int lado, int altura) {
     	
-    	int total = (int) (Calculalado(lado, altura) / 4.76);
+    	float total = (float) (Calculalado(lado, altura) / 4.76 / 18);
     	
-    	return total + 1;
+    	if (total % 1 != 0) {
+    		total = (int) total + 1;
+    	}
+    	
+    	return total;
     }
     
     public static float preço(int lado, int altura, int tipo) {
@@ -49,19 +53,19 @@ public class piramede {
     	
     	if (tipo == 1) {
     		
-    	total = (float) (alturaimento(lado, altura) * 127.90);
+    	total = (float) (latas(lado, altura) * 127.90);
     		
     	}
     	
     	if (tipo == 2) {
     		
-    		total = (float) (alturaimento(lado, altura) * 258.98);
+    		total = (float) (latas(lado, altura) * 258.98);
     		
     	}
     	
     	if (tipo == 3) {
     		
-    		total = (float) (alturaimento(lado, altura) * 344.34);
+    		total = (float) (latas(lado, altura) * 344.34);
     		
     	}
     	
@@ -72,10 +76,10 @@ public class piramede {
     public String toString() {
     	
 		StringBuffer stringBuffer = new StringBuffer();
-		stringBuffer.append("lado a ser pintada: ");
+		stringBuffer.append("Area a ser pintada: ");
 		stringBuffer.append(Calculalado(lado, altura));
 		stringBuffer.append(". Latas de tinta necessárias: ");
-		stringBuffer.append(alturaimento(lado, altura));
+		stringBuffer.append(latas(lado, altura));
 		stringBuffer.append(". Valor total: ");
 		stringBuffer.append(preço(lado, altura, tipo));
 

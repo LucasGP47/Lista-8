@@ -17,7 +17,7 @@ public class piramedemain {
     
     int tipo = entrada.nextInt();
     
-    cubo teste = new cubo(base, altura, tipo);
+    piramede teste = new piramede(base, altura, tipo);
     
     System.out.println(teste.toString());
     
