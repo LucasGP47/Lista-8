@@ -95,11 +95,10 @@ public class cubo {
 		stringBuffer.append(preço(area, rend, tipo));
 
 		return stringBuffer.toString();
+		
+		
 	}
     
-    
-    
-    
-    
+ 
     
 }
